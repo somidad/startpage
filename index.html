@@ -284,9 +284,12 @@ input, input:focus {
     </form>
   </div>
   <script>
-    e.preventDefault();
-    const input = document.getElementById("millie").value;
-    if (input) {
+    function onSubmitMillie() {
+      e.preventDefault();
+      const input = document.getElementById("millie").value;
+      if (!input) {
+        return;
+      }
       const url = new URL(input, "https://www.millie.co.kr/v3/search/result/");
       window.open(url.href, "_blank");
     }
