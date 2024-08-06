@@ -286,11 +286,10 @@ input, input:focus {
   <script>
     e.preventDefault();
     const input = document.getElementById("millie").value;
-    if (!input) {
-      return;
+    if (input) {
+      const url = new URL(input, "https://www.millie.co.kr/v3/search/result/");
+      window.open(url.href, "_blank");
     }
-    const url = new URL(input, "https://www.millie.co.kr/v3/search/result/");
-    window.open(url.href, "_blank");
   </script>
 </body>
 </html>
